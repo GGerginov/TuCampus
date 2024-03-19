@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="TuCampus.Views.UserLoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:vm="clr-namespace:TuCampus.ViewModels">
+
+    
+    <StackPanel Orientation="Vertical"
+                Margin="50">
+        <TextBlock Text="Login" 
+                   FontSize="25"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   FontWeight="Bold"
+                   Padding="10"
+                   />
+        <Grid VerticalAlignment="Center"
+          HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="User Name" 
+               Grid.Row="0"
+               Margin="0,15"
+               HorizontalAlignment="Left"/>
+            <TextBox  Grid.Column="1"
+              Grid.Row="1"
+              Padding="0,5"
+              Width="255"
+              HorizontalAlignment="Left"
+              Text="{Binding UserName, Mode=TwoWay,
+            UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Text="Password" 
+               Grid.Row="2"
+               Margin="0,15"
+               HorizontalAlignment="Left"/>
+            <TextBox Grid.Row="3"
+                  Text="{Binding Password, Mode=TwoWay, 
+            UpdateSourceTrigger=PropertyChanged}"
+                  Padding="0,5"                           
+                  Width="255"
+                  HorizontalAlignment="Left"/>
+        </Grid>
+        <Button x:Name="LoginBtn" 
+                Content="Login" 
+                Foreground="White"
+                Background="Black"
+                Margin="0,25"
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding UserName}"
+                Height="35"
+                Width="250"
+            />
+    </StackPanel>
+</UserControl>

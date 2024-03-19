@@ -4,9 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TuCampus"
+        xmlns:vms="clr-namespace:TuCampus.ViewModels"
+        xmlns:views="clr-namespace:TuCampus.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid MaxWidth="600" Margin="20 10">
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vms:LoginViewModel}">
+                <views:UserLoginView />
+            </DataTemplate>
+            
+        </Grid.Resources>
 
+        <ContentControl Content="{Binding CurrentViewModel}" />
     </Grid>
 </Window>

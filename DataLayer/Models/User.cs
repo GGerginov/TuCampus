@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,15 +11,18 @@ namespace DataLayer.Model
 {
     public class User
     {
-        public string FirstName { get; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public string FirstName { get; set; }
 
-        public string LastName { get; }
+        public string LastName { get; set; }
 
-        public string Email { get; }
+        public string Email { get; set; }
 
-        public string FacultyNumber { get; }
+        public string FacultyNumber { get; set; }
 
-        public UserRoleEnum Role { get; }
+        public UserRoleEnum Role { get; set; }
 
         public User(string firstName, string lastName, string email, string facultyNumber, UserRoleEnum role)
         {
@@ -26,6 +31,13 @@ namespace DataLayer.Model
             Email = email;
             FacultyNumber = facultyNumber;
             Role = role;
-        }   
+        }
+
+      public User()
+        {
+      } 
+
+
+
     }
 }
