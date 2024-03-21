@@ -4,6 +4,7 @@ using System.Data;
 using System.Windows;
 using TuCampus.Stores;
 using TuCampus.ViewModels;
+using TuCampus.ViewModels.Users;
 
 namespace TuCampus
 {
@@ -25,22 +26,20 @@ namespace TuCampus
         {
             base.OnStartup(e);
             var mainWindow = new MainWindow();
-            _navigationStore.CurrentViewModel = CreateLoginViewModel();
+            
+            var navigationService = new NavigationService(_navigationStore);
+            var loginViewModel = new LoginViewModel(navigationService);
+            _navigationStore.CurrentViewModel = loginViewModel;
+            //navigationService = new NavigationService(_navigationStore);
+
+
             var mainViewModel = new MainViewModel(_navigationStore);
            
             mainWindow.DataContext = mainViewModel;
             mainWindow.Show();
         }
 
-        private LoginViewModel CreateLoginViewModel()
-        {
-            return new LoginViewModel(new NavigationService(_navigationStore, CreateWelcomeDashboardViewModel));
-        }
-
-        private WelcomeDashboardViewModel CreateWelcomeDashboardViewModel()
-        {
-            return new WelcomeDashboardViewModel();
-        }
+      
     }
 
 

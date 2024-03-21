@@ -15,17 +15,23 @@ namespace DataLayer.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public string SubjectName { get; }
+        public string SubjectName { get; set; }
 
-        public string RoomNumber { get; }
+        public string RoomNumber { get; set; }
 
-        public User Teacher { get; }
+        public User Teacher { get; set; }
+
+        public List<User> students { get; set; }
 
         public Course(string subjectName, string roomNumber, User teacher)
         {
             SubjectName = subjectName;
             RoomNumber = roomNumber;
             Teacher = teacher;
+        }
+
+        public Course()
+        {
         }
     }
 }

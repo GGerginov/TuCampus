@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer.Models.Others;
+using DataLayer.Models;
 
 namespace DataLayer.Model
 {
@@ -14,9 +15,9 @@ namespace DataLayer.Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public string FirstName { get; set; }
-
-        public string LastName { get; set; }
+       
+        public string Username { get; set; }
+        public string Password { get; set; }
 
         public string Email { get; set; }
 
@@ -24,10 +25,10 @@ namespace DataLayer.Model
 
         public UserRoleEnum Role { get; set; }
 
-        public User(string firstName, string lastName, string email, string facultyNumber, UserRoleEnum role)
-        {
-            FirstName = firstName;
-            LastName = lastName;
+        public User(string userName,string password ,string email, string facultyNumber, UserRoleEnum role)
+        {   
+            Username = userName;
+            Password = password;
             Email = email;
             FacultyNumber = facultyNumber;
             Role = role;

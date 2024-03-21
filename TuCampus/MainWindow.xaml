@@ -5,15 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TuCampus"
         xmlns:vms="clr-namespace:TuCampus.ViewModels"
+        xmlns:vmsu="clr-namespace:TuCampus.ViewModels.Users"
+        xmlns:vmsc="clr-namespace:TuCampus.ViewModels.Courses"
         xmlns:views="clr-namespace:TuCampus.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="TuCampus" Height="450" Width="800">
     <Grid MaxWidth="600" Margin="20 10">
         <Grid.Resources>
-            <DataTemplate DataType="{x:Type vms:LoginViewModel}">
+            <DataTemplate DataType="{x:Type vmsu:LoginViewModel}">
                 <views:UserLoginView />
             </DataTemplate>
-            
+            <DataTemplate DataType="{x:Type vms:WelcomeDashboardViewModel}">
+                <views:WelcomeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmsc:ShowAllCoursesViewModel}">
+                <views:ShowAllCoursesView />
+            </DataTemplate>
+
         </Grid.Resources>
 
         <ContentControl Content="{Binding CurrentViewModel}" />

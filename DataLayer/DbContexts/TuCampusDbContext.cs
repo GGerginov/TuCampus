@@ -13,10 +13,15 @@ namespace DataLayer.DbContexts
 {
     public class TuCampusDbContext : DbContext
     {
+
+        public DbSet<User> Users { get; set; }
+
+        public DbSet<Course> Courses { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string solutionFolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            string databaseFile = "Welcome.db";
+            string databaseFile = "TuCampus.db";
             string databasePath = Path.Combine(solutionFolder, databaseFile);
 
             optionsBuilder.UseSqlite($"Data Source={databasePath}");
@@ -36,11 +41,11 @@ namespace DataLayer.DbContexts
             var user = new User()
             {
                 Id = 1,
-                FirstName = "Georgi",
-                LastName = "Georgiev",
-                Email = "",
-                FacultyNumber = "123456",
-                Role = UserRoleEnum.Student
+                Username = "Admin",
+                Password = "123456",
+                Email = "demo@abv.bg",
+                FacultyNumber = "121221111",
+                Role = UserRoleEnum.Student,
             };
 
 

@@ -11,17 +11,20 @@ namespace DataLayer.Services
     public class NavigationService
     {
         private readonly NavigationStore _navigationStore;
-        private readonly Func<ViewModelBase> _createViewModel;
-
-        public NavigationService(NavigationStore navigationStore, Func<ViewModelBase> createViewModel)
+        
+        public NavigationService(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
-            _createViewModel = createViewModel;
+            
         }
 
-        public void Navigate()
+        public void Navigate(ViewModelBase viewModel)
         {
-            _navigationStore.CurrentViewModel = _createViewModel();
+            _navigationStore.CurrentViewModel = viewModel;
         }
+       // public void Navigate()
+        //{
+          //  _navigationStore.CurrentViewModel = _createViewModel();
+        //}
     }
 }

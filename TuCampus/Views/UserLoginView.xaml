@@ -31,7 +31,7 @@
               Padding="0,5"
               Width="255"
               HorizontalAlignment="Left"
-              Text="{Binding UserName, Mode=TwoWay,
+              Text="{Binding Username, Mode=TwoWay,
             UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock Text="Password" 
                Grid.Row="2"
@@ -50,7 +50,7 @@
                 Background="Black"
                 Margin="0,25"
                 Command="{Binding LoginCommand}"
-                CommandParameter="{Binding UserName}"
+                
                 Height="35"
                 Width="250"
             />

@@ -8,16 +8,17 @@ using System.Windows.Input;
 using TuCampus.Commands;
 using TuCampus.Stores;
 
-namespace TuCampus.ViewModels
+namespace TuCampus.ViewModels.Users
 {
-    public class LoginViewModel: ViewModelBase
+    public class LoginViewModel : ViewModelBase
     {
+
         public string Username { get; set; }
         public string Password { get; set; }
         public ICommand LoginCommand { get; }
         public LoginViewModel(NavigationService navigationService)
         {
-            LoginCommand = new NavigateCommand(navigationService);
+            LoginCommand = new LoginComand(this, navigationService);
         }
 
         public void Login()

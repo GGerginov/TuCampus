@@ -17,7 +17,6 @@ namespace TuCampus.Stores
             {
                 _currentViewModel = value;
                 OnCurrentViewModelChanged();
-
             }
         }
 
