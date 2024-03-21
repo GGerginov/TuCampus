@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Windows;
+using TuCampus.Services;
 using TuCampus.Stores;
 using TuCampus.ViewModels;
 using TuCampus.ViewModels.Users;

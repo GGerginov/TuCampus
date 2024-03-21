@@ -21,5 +21,18 @@ namespace TuCampus.Services.CoursesService
             }
 
         }
+
+        public List<Course> GetCoursesByStudentId(int studentId)
+        {
+            using (var ctx = new TuCampusDbContext())
+            {
+                ctx.Database.EnsureCreated();
+                var courses = from uc in ctx.UserCourses
+                              join c in ctx.Courses on uc.CourseId equals c.Id
+                              where uc.UserId == studentId
+                              select c;
+                return courses.ToList();
+            }
+        }
     }
 }

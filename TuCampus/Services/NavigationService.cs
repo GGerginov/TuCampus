@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using TuCampus.Stores;
 using TuCampus.ViewModels;
 
-namespace DataLayer.Services
+namespace TuCampus.Services
 {
     public class NavigationService
     {

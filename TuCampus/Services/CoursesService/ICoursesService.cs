@@ -11,5 +11,7 @@ namespace TuCampus.Services.CoursesService
     public interface ICoursesService
     {
         List<Course> GetCourses();
+
+        List<Course> GetCoursesByStudentId(int studentId);
     }
 }

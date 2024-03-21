@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TuCampus.Commands;
+using TuCampus.Services;
 using TuCampus.ViewModels.Users;
 
 namespace TuCampus.ViewModels.Welcome
@@ -18,7 +19,7 @@ namespace TuCampus.ViewModels.Welcome
         public UserViewModel UserViewModel => _userViewModel;
         public ICommand LogoutCommand { get; }
 
-        public ICommand ShowCourses { get; }
+        public ICommand ShowMyCourses { get; }
         public UserRoleEnum Role => _userViewModel.Role;
 
         public bool IsAdmin => false;
@@ -31,7 +32,7 @@ namespace TuCampus.ViewModels.Welcome
         {
             LogoutCommand = new NavigateCommand(_navigationService, new LoginViewModel(_navigationService));
             _userViewModel = userViewModel;
-            ShowCourses = new ShowAllCoursesCommand(_userViewModel, _navigationService);
+            ShowMyCourses = new ShowCoursesForStudentCommand(_userViewModel, _navigationService);
         }
     }
 }

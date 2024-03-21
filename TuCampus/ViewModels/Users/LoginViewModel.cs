@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TuCampus.Commands;
+using TuCampus.Services;
 using TuCampus.Stores;
 
 namespace TuCampus.ViewModels.Users

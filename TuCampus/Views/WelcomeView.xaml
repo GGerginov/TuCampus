@@ -59,7 +59,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Content="Show My Courses" Margin="5" Command="{Binding ShowCourses}">
+            <Button Content="Show My Courses" Margin="5" Command="{Binding ShowMyCourses}">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Visibility" Value="Collapsed"/>
@@ -71,7 +71,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Content="Show All Students" Margin="5" Command="{Binding ShowCourses}">
+            <Button Content="Show All Students" Margin="5" Command="{Binding ShowUsers}">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Visibility" Value="Collapsed"/>

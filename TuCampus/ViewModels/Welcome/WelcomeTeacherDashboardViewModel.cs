@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TuCampus.Commands;
+using TuCampus.Services;
 using TuCampus.ViewModels.Users;
 
 namespace TuCampus.ViewModels.Welcome

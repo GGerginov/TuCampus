@@ -13,6 +13,7 @@ namespace DataLayer.DbContexts
 {
     public class TuCampusDbContext : DbContext
     {
+        public DbSet<UserCourse> UserCourses { get; set; }
 
         public DbSet<User> Users { get; set; }
 
