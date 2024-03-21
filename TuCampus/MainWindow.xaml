@@ -4,18 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TuCampus"
-        xmlns:vms="clr-namespace:TuCampus.ViewModels"
+        xmlns:vms="clr-namespace:TuCampus.ViewModels.Welcome"
         xmlns:vmsu="clr-namespace:TuCampus.ViewModels.Users"
         xmlns:vmsc="clr-namespace:TuCampus.ViewModels.Courses"
-        xmlns:views="clr-namespace:TuCampus.Views"
+        xmlns:views="clr-namespace:TuCampus.Views" 
+        xmlns:converters="clr-namespace:TuCampus.Converters" 
         mc:Ignorable="d"
         Title="TuCampus" Height="450" Width="800">
+
+    <Window.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Window.Resources>
     <Grid MaxWidth="600" Margin="20 10">
         <Grid.Resources>
+            
             <DataTemplate DataType="{x:Type vmsu:LoginViewModel}">
                 <views:UserLoginView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:WelcomeDashboardViewModel}">
+            <DataTemplate DataType="{x:Type vms:WelcomeStudentDashboardViewModel}">
+                <views:WelcomeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:WelcomeAdminDashboardViewModel}">
+                <views:WelcomeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:WelcomeTeacherDashboardViewModel}">
                 <views:WelcomeView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type vmsc:ShowAllCoursesViewModel}">

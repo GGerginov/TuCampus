@@ -5,21 +5,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TuCampus.Stores;
+using TuCampus.ViewModels;
 
 namespace TuCampus.Commands
 {
     public class NavigateCommand : CommandBase
     {
         private readonly NavigationService _navigationService;
+        public ViewModelBase ViewModel { get; set; }
 
-        public NavigateCommand(NavigationService navigationService)
+        public NavigateCommand(NavigationService navigationService,ViewModelBase viewModel)
         {
             _navigationService = navigationService;
+            ViewModel = viewModel;
         }
 
         public override void Execute(object parameter)
         {
-            //_navigationService.Navigate();
+            _navigationService.Navigate(ViewModel);
         }
     }
 }

@@ -3,12 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:TuCampus.Views" xmlns:viewmodels="clr-namespace:TuCampus.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:WelcomeDashboardViewModel}"
+             xmlns:local="clr-namespace:TuCampus.Views"
+             xmlns:viewmodels="clr-namespace:TuCampus.ViewModels.Users" 
+             xmlns:enums="clr-namespace:TuCampus.Extras" xmlns:converters="clr-namespace:TuCampus.Converters"
+             d:DataContext="{d:DesignInstance Type=viewmodels:UserViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
 
+   
+    <StackPanel>
+        
         <Grid Margin="20" DataContext="{Binding UserViewModel}">
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -28,17 +34,59 @@
             <TextBlock Grid.Row="2" Text="Email:" />
             <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Email}" />
 
-            <TextBlock Grid.Row="3" Text="Faculty Number:" />
+
+            <TextBlock Grid.Row="3" Text="Faculty Number:"/>
+            
             <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding FacultyNumber}" />
 
             <TextBlock Grid.Row="4" Text="Role:" />
             <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Role}" />
+
+            
         </Grid>
-        
-        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="10,50,0,0">
-            <Button Content="Show All Courses" Margin="5" Command="{Binding ShowCourses}"/>
+
+        <StackPanel  Orientation="Horizontal" Margin="10,50,0,0">
+            
+            <Button Content="Show All Courses" Margin="5" Command="{Binding ShowCourses}">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsAdmin}" Value="true">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Show My Courses" Margin="5" Command="{Binding ShowCourses}">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsStudent}" Value="true">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Show All Students" Margin="5" Command="{Binding ShowCourses}">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsAdmin}" Value="true">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Logout" Margin="5" Command="{Binding LogoutCommand}"/>
+
         </StackPanel>
+        <!-- Buttons section -->
+        
     </StackPanel>
-    
-    
 </UserControl>

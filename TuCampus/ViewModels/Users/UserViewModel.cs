@@ -23,6 +23,10 @@ namespace TuCampus.ViewModels.Users
 
         public UserRoleEnum Role => _user.Role;
 
+        public bool IsAdmin => _user.Role == UserRoleEnum.Admin;
+
+        public bool IsTeacher => _user.Role == UserRoleEnum.Teacher;
+
         public UserViewModel(User user)
         {
             _user = user;
