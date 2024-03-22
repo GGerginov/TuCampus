@@ -17,11 +17,13 @@ namespace TuCampus.ViewModels.Users
         public NavigationService NavigationService { get; set; }
 
         public ICommand ReturnCommand { get; }
+        public ICommand AddNewUsersDisplay { get; }
 
         public ListAllStudentsViewModel(UserViewModel userViewModel, List<UserViewModel> users, NavigationService _navigationService)
         {
             Users = users;
             NavigationService = _navigationService;
+            AddNewUsersDisplay = new NavigateCommand(NavigationService, new AddNewUsersViewModel(_navigationService));
 
             switch (userViewModel.Role.ToString().ToUpper())
             {

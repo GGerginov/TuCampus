@@ -36,6 +36,9 @@
 			<DataTemplate DataType="{x:Type vmsu:ListAllStudentsViewModel}">
 				<views:ShowAllUsersView />
 			</DataTemplate>
+            <DataTemplate DataType="{x:Type vmsu:AddNewUsersViewModel}">
+                <views:AddNewUserView/>
+            </DataTemplate>
 
         </Grid.Resources>
 

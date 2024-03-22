@@ -9,6 +9,7 @@ namespace TuCampus.Services.CoursesService
 {
     interface IUsersService
     {
+        void AddUser(string username, string password, string email, string facultyNumber);
         List<User> GetAllUsers();
     }
 }
