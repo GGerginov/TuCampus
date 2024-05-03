@@ -7,6 +7,7 @@
         xmlns:vms="clr-namespace:TuCampus.ViewModels.Welcome"
         xmlns:vmsu="clr-namespace:TuCampus.ViewModels.Users"
         xmlns:vmsc="clr-namespace:TuCampus.ViewModels.Courses"
+        xmlns:vmss="clr-namespace:TuCampus.ViewModels.Grades"
         xmlns:views="clr-namespace:TuCampus.Views" 
         xmlns:converters="clr-namespace:TuCampus.Converters" 
         mc:Ignorable="d"
@@ -37,7 +38,13 @@
 				<views:ShowAllUsersView />
 			</DataTemplate>
             <DataTemplate DataType="{x:Type vmsu:AddNewUsersViewModel}">
-                <views:AddNewUserView/>
+                <views:AddNewUserView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmss:GradeSearchViewModel}">
+                <views:GradeSearchView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmss:PresentListViewModel}">
+                <views:PresentListView />
             </DataTemplate>
 
         </Grid.Resources>

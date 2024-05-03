@@ -32,10 +32,22 @@
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel Grid.Row="1" Height="90" Width="100" Orientation="Horizontal" Margin="10,50,0,0">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" Content="Show Lists Grades" Height="20" Width="100" Margin="5" Command="{Binding ShowListDisplay}"/>
+                <Button Grid.Row="1" Content="Show Lists PresentList" Height="20" Width="100" Margin="5" Command="{Binding ShowPresentsDisplay}"/>
+                <Button Grid.Row="2" Content="Add new user" Height="20" Width="100" Margin="5" Command="{Binding AddNewUsersDisplay}"/>
+                <Button Grid.Row="3" Content="Return" Height="20" Width="100" Margin="5" Command="{Binding ReturnCommand}"/>
+
+            </Grid>
             
-            <Button Content="Return" Height="20" Width="100" Margin="5" Command="{Binding ReturnCommand}"/>
-            
-            <Button Content="Add new user" Height="20" Width="100" Margin="5" Command="{Binding AddNewUsersDisplay}"/>
+           
 
         </StackPanel>
     </Grid>

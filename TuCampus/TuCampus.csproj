@@ -18,6 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\PresentListView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ShowAllUsersView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

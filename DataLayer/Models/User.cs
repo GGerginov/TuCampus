@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataLayer.Models.Others;
 using DataLayer.Models;
+using DataLayer.Models.ListModels;
 
 namespace DataLayer.Model
 {
@@ -22,6 +23,7 @@ namespace DataLayer.Model
         public string Email { get; set; }
 
         public string FacultyNumber { get; set; }
+        public List<PresentList> OrganizedPresentLists { get; set; }
 
         public UserRoleEnum Role { get; set; }
 
